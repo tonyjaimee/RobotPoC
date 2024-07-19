@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Rebot 7.0.1 (Python 3.12.4 on darwin)" generated="2024-07-19T12:30:21.322154" rpa="false" schemaversion="5">
+<suite id="s1" name="UITesting" source="/Users/tony.t/RobotPoC/UITesting.robot">
+<test id="s1-t1" name="Log into bank account" line="36">
+<kw name="Setup" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-19T12:29:52.608956" level="INFO">Opening browser 'headlesschrome' to base url 'https://demo.applitools.com'.</msg>
+<arg>https://demo.applitools.com</arg>
+<arg>headlesschrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-19T12:29:52.608720" elapsed="1.664394"/>
+</kw>
+<kw name="Eyes Open" owner="EyesLibrary">
+<tag>Check flow</tag>
+<doc>Shared parameters section from `applitools.yaml` could be overwritten during `Eyes Open` call, see `Preconditions`.</doc>
+<status status="PASS" start="2024-07-19T12:29:54.273679" elapsed="0.946227"/>
+</kw>
+<status status="PASS" start="2024-07-19T12:29:52.608130" elapsed="2.612295"/>
+</kw>
+<kw name="Eyes Check Window" owner="EyesLibrary">
+<kw name="Fully" owner="EyesLibrary">
+<tag>Check Settings keyword</tag>
+<doc>Returns a CheckSettings object specified fully.</doc>
+<status status="PASS" start="2024-07-19T12:29:55.221750" elapsed="0.000186"/>
+</kw>
+<msg time="2024-07-19T12:30:21.321000" level="INFO">Check result url: https://eyes.applitools.com/app/test-results/00000251680944595942/00000251680944595817/steps/1?accountId=uXT7QPq1W027sM6Zs7V3mA__</msg>
+<arg>Login Page</arg>
+<arg>Fully</arg>
+<tag>Allow to pass Check Settings keywords</tag>
+<tag>Check flow</tag>
+<doc>Check current browser window</doc>
+<status status="PASS" start="2024-07-19T12:29:55.221090" elapsed="0.646240"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-19T12:29:55.868031" level="INFO">Typing text 'applibot' into text field 'id:username'.</msg>
+<arg>id:username</arg>
+<arg>applibot</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-19T12:29:55.867672" elapsed="0.097060"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-19T12:29:55.965188" level="INFO">Typing text 'I&lt;3VisualTests' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>I&lt;3VisualTests</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-19T12:29:55.965005" elapsed="0.038628"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-19T12:29:56.004023" level="INFO">Clicking element 'id:log-in'.</msg>
+<arg>id:log-in</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-19T12:29:56.003853" elapsed="0.126797"/>
+</kw>
+<kw name="Eyes Check Window" owner="EyesLibrary">
+<kw name="Fully" owner="EyesLibrary">
+<tag>Check Settings keyword</tag>
+<doc>Returns a CheckSettings object specified fully.</doc>
+<status status="PASS" start="2024-07-19T12:29:56.131112" elapsed="0.000073"/>
+</kw>
+<kw name="Match Level" owner="EyesLibrary">
+<arg>LAYOUT</arg>
+<tag>Check Settings keyword</tag>
+<doc>Returns a CheckSettings object specified match level.</doc>
+<status status="PASS" start="2024-07-19T12:29:56.131269" elapsed="0.000085"/>
+</kw>
+<msg time="2024-07-19T12:30:21.321000" level="INFO">Check result url: https://eyes.applitools.com/app/test-results/00000251680944595942/00000251680944595817/steps/2?accountId=uXT7QPq1W027sM6Zs7V3mA__</msg>
+<arg>Main Page</arg>
+<arg>Fully</arg>
+<arg>Match Level</arg>
+<arg>LAYOUT</arg>
+<tag>Allow to pass Check Settings keywords</tag>
+<tag>Check flow</tag>
+<doc>Check current browser window</doc>
+<status status="PASS" start="2024-07-19T12:29:56.130859" elapsed="0.554488"/>
+</kw>
+<kw name="Teardown" type="TEARDOWN">
+<kw name="Eyes Close Async" owner="EyesLibrary">
+<tag>Check flow</tag>
+<doc>Closes a session and returns the results of the session.
+If a test is running, aborts it. Otherwise, does nothing.</doc>
+<status status="PASS" start="2024-07-19T12:29:56.685923" elapsed="0.002157"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-07-19T12:29:56.688247" elapsed="0.076571"/>
+</kw>
+<status status="PASS" start="2024-07-19T12:29:56.685703" elapsed="0.079267"/>
+</kw>
+<status status="PASS" start="2024-07-19T12:29:52.606620" elapsed="4.158496"/>
+</test>
+<doc>Use Selenium WebDriver and Applitools Eyes.
+to install SeleniumLibrary =&gt; pip3 install --upgrade robotframework-seleniumlibrary
+to install EyesLibrary =&gt; pip3 install eyes-robotframework
+then Then, generate the Applitools configuration file =&gt; python3 -m EyesLibrary init-config
+After all libraries are installed, you need to disable Robocorp extension, restart extension and, enable it back on again
+so visual studio can recognise those libraries.
+Next, create applitools.yaml file. Inside this .yaml file set api_key: &lt;your-api-key&gt;
+https://applitools.com/tutorials/quickstart/web/robot-framework</doc>
+<meta name="Applitools Test Results Url">https://eyes.applitools.com/app/batches/00000251680944595942/00000251680944595817?accountId=uXT7QPq1W027sM6Zs7V3mA__</meta>
+<status status="PASS" start="2024-07-19T12:29:51.772710" elapsed="4.992887"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="UITesting">UITesting</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
